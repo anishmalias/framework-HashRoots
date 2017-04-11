@@ -1,0 +1,57 @@
+.HRoots_header{
+	background: $primary_color;
+	padding: 20px 0px;
+	position: relative;
+	z-index: 11;
+
+	@include boxShadow(0px 0px 15px 5px lighten($color_black, 75%));
+
+	.HRoots_logo{
+		color: $color_white;
+		font-weight: 500;
+		font-size: 22px;
+	}
+}
+.HRoots_wrap{
+	padding: 35px 0;
+	background: $light_grey;
+
+	h2{
+		margin:30px 0 20px;
+		position: relative;
+		padding: 0px 0px 15px 0px;
+
+		&::before{
+			content:'';
+			width: 100%;
+			max-width: 40px;
+			height: 3px;
+			background: $primary_color;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+		}
+	}
+	.HRoots-grids{
+		.HRoots-grid-items{
+			background: $color_white;
+			text-align: center;
+			font-size: 14px;
+			border: lighten($color_black, 85%) 1px solid;
+			padding: 10px 0px;
+			font-weight: 700;
+    		line-height: normal;
+    		cursor: pointer;
+    		margin-bottom: 30px;
+
+    		@include borderRadius(2px);
+    		@include Transition(background ease 0.2s, border ease 0.2s, color ease 0.2s);
+
+    		&:hover{
+    			background: rgba($primary_color, 0.5);
+    			border-color: $primary_color;
+    			color: $color_white;
+    		}
+		}
+	}
+}

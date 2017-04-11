@@ -1,0 +1,38 @@
+
+@mixin borderBox{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+/* Box Shadow */
+
+@mixin boxShadow($boxShadow...){
+	box-shadow: $boxShadow;
+	-webkit-box-shadow: $boxShadow;
+	-moz-box-shadow: $boxShadow;
+	-ms-box-shadow: $boxShadow;
+	-o-box-shadow: $boxShadow;
+}
+
+/* Box Radius */
+
+@mixin borderRadius($borderRadius...){
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	-ms-border-radius: $borderRadius;
+	-o-border-radius: $borderRadius;
+}
+
+/* Transition */
+
+@mixin Transition($transition...){
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+}

@@ -1,0 +1,64 @@
+.btn-primary{
+	display: inline-block;
+	font-size: 15px;
+	padding: 10px 17px;
+	color: $color_white;
+	line-height: 17px;
+	cursor: pointer;
+
+	@include borderRadius(3px);
+	@include Transition(background ease 0.2s);
+
+	&:focus{
+		outline:none;
+	}
+}
+.btn-primary{
+	background: $blue;
+	border: darken($blue, 20%) 1px solid;
+
+	&:hover, &:focus{
+		background: lighten($blue, 5%);
+	}
+}
+.btn-success{
+	@extend .btn-primary;
+
+	background: $green;
+	border: darken($green, 10%) 1px solid;
+
+	&:hover, &:focus{
+		background: lighten($green, 5%);
+	}
+}
+.btn-danger{
+	@extend .btn-primary;
+	background: $red;
+	border: darken($red, 10%) 1px solid;
+
+	&:hover, &:focus{
+		background: lighten($red, 5%);
+	}
+}
+.btn-warning{
+	@extend .btn-primary;
+
+	background: $yellow;
+	border: darken($yellow, 10%) 1px solid;
+
+	&:hover, &:focus{
+		background: lighten($yellow, 5%);
+	}
+}
+.btn-default{
+	@extend .btn-primary;
+
+	background: $color_white;
+	border: darken($secondary_color, 10%) 1px solid;
+	color: darken($secondary_color, 15%);
+
+	&:hover, &:focus{
+		background: $color_white;
+		border-color: darken($secondary_color, 5%);
+	}
+}

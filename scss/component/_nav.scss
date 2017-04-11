@@ -1,0 +1,126 @@
+.nav{
+	position: relative;
+	z-index: 1;
+	> ul{
+		margin: 0px;
+		padding: 0px;
+		background: $primary_color; 
+
+		@include borderRadius(2px);
+
+		>li{
+			float: left;
+			position: relative;
+			> a{
+				display: block;
+				font-size: 14px;
+				color: $color_white;
+				text-decoration: none;
+				line-height: normal;
+				padding: 15px 30px;
+
+				@include Transition(color ease 0.2s, background ease 0.2s);
+			}
+			&.active, &:hover{
+				>a{
+					background: darken($primary_color, 10%);
+				}
+			}
+			> ul{
+				position: absolute;
+				top: 49px;
+				left: 0px;
+				width: 200px;
+				display: none;
+
+				> li{
+					> a{
+						display: block;
+						font-size: 14px;
+						color: $color_black;
+						text-decoration: none;
+						line-height: normal;
+						padding: 12px 30px;
+						background: lighten($color_black, 95%); 
+
+						@include Transition(color ease 0.2s, background ease 0.2s);
+
+					}
+					&:hover{
+						> a{
+							background: lighten($color_black, 90%); 
+						}
+					}
+				}
+			}
+			&.dropdown{
+				> a{
+					&::after{
+						content: "\f0d7";
+						font-family: $font2;
+						display: inline-block;
+						font-size: 17px;
+						margin-left: 6px;
+						position: relative;
+						top: 2px;
+					}
+				}
+			}
+		}
+
+		&::after{
+			content: '';
+			clear: both;
+			display: block;
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+	.nav-trigger{
+		width: 45px;
+		height: 38px;
+		background: #F84F1C;
+		display: inline-block;
+		padding: 11px 12px 5px;
+		border: none;
+		cursor: pointer;
+		display: none;
+
+		@include borderRadius(2px);
+		@include Transition(background ease 0.2s, color ease 0.2s);
+
+		.line{
+			display: block;
+			height: 2px;
+			background: #fff;
+			margin: 0 0 3px 0;
+		}
+		&:focus{
+			outline: none;
+		}
+	}
+	&::after, &::before{
+		content: '';
+		clear: both;
+		display: block;
+		overflow: hidden;
+		width: 100%;
+	}
+	&.mobile-menu{
+		> ul{
+			position: absolute;
+			top: 50px;
+			width: 100%;
+			> li{
+				float: none;
+				> ul{
+					position: static;
+					width: auto;
+				}
+			}
+		}
+		.nav-trigger{
+			float: right;
+		}
+	}
+}

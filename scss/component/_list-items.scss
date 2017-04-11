@@ -1,0 +1,12 @@
+.list-item{
+	margin: 0;
+	padding: 0;
+
+	li{
+		margin: 0px;
+		padding: 0px;
+		+ li{
+			margin-top: 20px;
+		}
+	}
+}
